@@ -2,6 +2,11 @@ package application;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Rover rover = new Rover();
+        Console console = new Console(rover);
+
+        console.transmissionRover("ffrfforf");
+
+        System.out.println("x= " + rover.getX() + "; y= " + rover.getY());
     }
 }
