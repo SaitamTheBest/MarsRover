@@ -1,6 +1,6 @@
-import application.Console;
+import application.WestRoverDirection;
+import console.Console;
 import application.Rover;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -38,6 +38,21 @@ public class RoverTest {
     @Test
     void turnToLeftAndTestWhenGoesToWestOnce(){
         console.transmissionRover("lf");
+        assertEquals(rover.getY(),0);
+        assertEquals(rover.getX(), -1);
+    }
+
+    @Test
+    void testWhenGoesBackToNorthOnce(){
+        console.transmissionRover("b");
+        assertEquals(rover.getY(),-1);
+        assertEquals(rover.getX(), 0);
+    }
+
+    @Test
+    void testWhenGoesToWestOnce(){
+        rover.setState(new WestRoverDirection(rover));
+        console.transmissionRover("f");
         assertEquals(rover.getY(),0);
         assertEquals(rover.getX(), -1);
     }

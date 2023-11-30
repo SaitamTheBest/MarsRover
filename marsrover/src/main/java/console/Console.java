@@ -1,4 +1,6 @@
-package application;
+package console;
+
+import application.Rover;
 
 public class Console {
     private Rover rover;
